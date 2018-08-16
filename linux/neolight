@@ -1,0 +1,97 @@
+hidden partial alphanumeric_keys
+xkb_symbols "basic" {
+    // http://www.x.org/archive/X11R6.8.2/doc/XKB-Enhancing4.html
+    // http://www.charvolant.org/~doug/xkb/html/node5.html
+    // https://wiki.archlinux.org/index.php/X_KeyBoard_extension
+    // http://grahamwideman.wikispaces.com/linux+--+keyboard+configuration,+xkb
+
+    // preserves AltGr and Shift+AltGr levels
+
+    key.type[Group1] = "EIGHT_LEVEL";
+
+    // Number row
+    // --------------------------------------------------------------
+    key <AE01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, onesuperior] }; // 1
+    key <AE02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, twosuperior] }; // 2
+    key <AE03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, threesuperior] }; // 3
+    key <AE04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U203A] }; // 4
+    key <AE05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U2039] }; // 5
+    key <AE06> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, cent] }; // 6
+
+    key <AE07> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, yen] }; // 7
+    key <AE08> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, singlelowquotemark] }; // 8
+    key <AE09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, leftsinglequotemark] }; // 9
+    key <AE10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, rightsinglequotemark] }; // 0
+
+    key <AE11> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol] }; // ß
+    key <AE12> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, dead_abovering] }; // ´
+
+    // Top row
+    // --------------------------------------------------------------
+    key <AD01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, ellipsis] }; // q
+    key <AD02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, underscore] }; // w
+    key <AD03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bracketleft] }; // e
+    key <AD04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bracketright] }; // r
+    key <AD05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asciicircum] }; // t
+
+    key <AD06> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, exclam] }; // z
+    key <AD07> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, less] }; // u
+    key <AD08> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, greater] }; // i
+    key <AD09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, equal] }; // o
+    key <AD10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, ampersand] }; // p
+
+    key <AD11> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U017F] }; // ü
+
+    // Middle row
+    // --------------------------------------------------------------
+    key <AC01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, backslash] }; // a
+    key <AC02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, slash] }; // s
+    key <AC03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, braceleft] }; // d
+    key <AC04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, braceright] }; // f
+    key <AC05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asterisk] }; // g
+
+    key <AC06> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, question] }; // h
+    key <AC07> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, parenleft] }; // j
+    key <AC08> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, parenright] }; // k
+    key <AC09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, minus] }; // l
+    key <AC10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, colon] }; // ö
+
+    key <AC11> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, at] }; // ä
+
+    // Bottom row
+    // --------------------------------------------------------------
+    key <AB01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, numbersign] }; // y
+    key <AB02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, dollar] }; // x
+    key <AB03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bar] }; // c
+    key <AB04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asciitilde] }; // v
+    key <AB05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, grave] }; // b
+
+    key <AB06> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, plus] }; // n
+    key <AB07> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, percent] }; // m
+    key <AB08> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, quotedbl] }; // ,
+    key <AB09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, apostrophe] }; // .
+    key <AB10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, semicolon] }; // -
+
+    include "neolight(neolight_modifiers)"
+
+    // japanese stuff
+    key <LSGT> { [Zenkaku_Hankaku] };
+    key <MENU> { [Muhenkan] };
+};
+
+hidden partial modifier_keys
+xkb_symbols "neolight_modifiers" {
+    // # key
+    key <AC12> {
+        type[Group1]="ONE_LEVEL",
+        [ISO_Level5_Shift]
+    };
+    modifier_map Mod3 { <AC12> };
+
+    // alt+caps activates capslock
+    key <CAPS> {
+        type[Group1] = "PC_ALT_LEVEL2",
+        [ISO_Level5_Shift, Caps_Lock]
+    };
+    modifier_map Mod3 { <CAPS> };
+};
