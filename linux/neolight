@@ -72,6 +72,9 @@ xkb_symbols "basic" {
     key <AB09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, apostrophe] }; // .
     key <AB10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, semicolon] }; // -
 
+    // mod3 + space = escape for vim
+    key <SPCE> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, Escape] }; // space
+
     include "neolight(neolight_modifiers)"
 
     // japanese stuff
