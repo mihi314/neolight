@@ -1,30 +1,39 @@
 # coding: utf-8
 #!/usr/bin/env python3
-
 import csv
+
 
 mappings = []
 
 # vk: Virtual Key
 # sc: Scan Code
-
 with open("../mappings.csv", encoding='utf-8', newline='') as f:
     for vk, sc, orig, new in csv.reader(f, delimiter=' ', quotechar=None):
-        if sc == "sc" or not new:
+        if not new:
             continue
+
+        # https://autohotkey.com/docs/commands/Send.htm
+        if len(new) == 1:
+            # single character
+            send_code = "{U+%s}" % hex(ord(new))
+        else:
+            # allows keys like Esc
+            send_code = "{%s}" % new
+
         mappings.append({
             "vk": vk,
             "sc": sc,
             "original_key": orig,
             "new_key": new,
-            "new_ordinal": hex(ord(new))})
+            "send_code": send_code
+        })
 
-# creation of akh file
+# creation of the ahk file
 # sc02B is the scancode of the # key
 template = """
 Capslock & sc{sc}::
 sc02B & sc{sc}::
-    send {{U+{new_ordinal}}}
+    send {send_code}
 return"""
 
 result = ""
