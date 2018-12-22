@@ -41,7 +41,7 @@ xkb_symbols "basic" {
     key <AD10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, ampersand] }; // p
 
     key <AD11> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U017F] }; // ü
-    key <AD12> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, Escape] }; // +
+    key <AD12> { [Escape, NoSymbol, NoSymbol, NoSymbol, Escape] }; // +
 
     // Middle row
     // --------------------------------------------------------------
