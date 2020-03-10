@@ -4,95 +4,173 @@ xkb_symbols "basic" {
     // http://www.charvolant.org/~doug/xkb/html/node5.html
     // https://wiki.archlinux.org/index.php/X_KeyBoard_extension
     // http://grahamwideman.wikispaces.com/linux+--+keyboard+configuration,+xkb
+    // on actions: https://www.x.org/releases/X11R7.6/doc/kbproto/xkbproto.html#key_actions
+    // bits in the state field have pre-defined names: 0=Shift, 1=Lock, 2=Control, 3=Mod1, 4=Mod2, 5=Mod3, 6=Mod4 and 7=Mod5
 
-    // preserves AltGr and Shift+AltGr levels
+    include "neolight(modifiers)"
 
-    key.type[Group1] = "EIGHT_LEVEL";
+    // preserves AltGr and Shift+AltGr levels  
+    // todo: explain why everything with groups and not modifiers
+
+    // key.type[Group1] = "EIGHT_LEVEL";
+    key.type[Group2] = "ONE_LEVEL";
+    key.type[Group3] = "ONE_LEVEL";
+
 
     // Number row
     // --------------------------------------------------------------
-    key <AE01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, onesuperior] }; // 1
-    key <AE02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, twosuperior] }; // 2
-    key <AE03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, threesuperior] }; // 3
-    key <AE04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U203A] }; // 4
-    key <AE05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U2039] }; // 5
-    key <AE06> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, cent] }; // 6
-
-    key <AE07> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, yen] }; // 7
-    key <AE08> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, singlelowquotemark] }; // 8
-    key <AE09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, leftsinglequotemark] }; // 9
-    key <AE10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, rightsinglequotemark] }; // 0
-
-    key <AE11> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol] }; // ß
-    key <AE12> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, dead_abovering] }; // ´
+    key <AE01> { [], [onesuperior], [onesuperior] }; // 1
+    key <AE02> { [], [twosuperior], [twosuperior] }; // 2
+    key <AE03> { [], [threesuperior], [threesuperior] }; // 3
+    key <AE04> { [], [U203A], [onequarter] }; // 4
+    key <AE05> { [], [U2039], [onehalf] }; // 5
+    key <AE06> { [], [cent], [notsign] }; // 6
+    key <AE07> { [], [yen], [braceleft] }; // 7
+    key <AE08> { [], [singlelowquotemark], [bracketleft] }; // 8
+    key <AE09> { [], [leftsinglequotemark], [bracketright] }; // 9
+    key <AE10> { [], [rightsinglequotemark], [braceright] }; // 0
+    key <AE11> { [], [NoSymbol], [backslash] }; // ß
+    key <AE12> { [], [dead_abovering], [dead_cedilla] }; // ´
 
     // Top row
     // --------------------------------------------------------------
-    key <AD01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, Escape] }; // q
-    key <AD02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, underscore] }; // w
-    key <AD03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bracketleft] }; // e
-    key <AD04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bracketright] }; // r
-    key <AD05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asciicircum] }; // t
-
-    key <AD06> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, exclam] }; // z
-    key <AD07> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, less] }; // u
-    key <AD08> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, greater] }; // i
-    key <AD09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, equal] }; // o
-    key <AD10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, ampersand] }; // p
-
-    key <AD11> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U017F] }; // ü
-    key <AD12> { [Escape, NoSymbol, NoSymbol, NoSymbol, Escape] }; // +
+    key <AD01> {
+        symbols = [], [ellipsis], [],
+        actions[Group3] = [RedirectKey(keycode=<PGUP>)]
+    }; // q
+    key <AD02> {
+        symbols = [], [underscore], [],
+        actions[Group3] = [RedirectKey(keycode=<BKSP>)]
+    }; // w
+    key <AD03> {
+        symbols = [], [bracketleft], [],
+        actions[Group3] = [RedirectKey(keycode=<UP>)]
+    }; // e
+    key <AD04> {
+        symbols = [], [bracketright], [],
+        actions[Group3] = [RedirectKey(keycode=<DELE>)]
+    }; // r
+    key <AD05> {
+        symbols = [], [asciicircum], [],
+        actions[Group3] = [RedirectKey(keycode=<PGDN>)]
+    }; // t
+    key <AD06> { [], [exclam], [VoidSymbol] }; // z
+    key <AD07> { [], [less], [VoidSymbol] }; // u
+    key <AD08> { [], [greater], [VoidSymbol] }; // i
+    key <AD09> { [], [equal], [VoidSymbol] }; // o
+    key <AD10> { [], [ampersand], [VoidSymbol] }; // p
+    key <AD11> { [], [degree], [VoidSymbol] }; // ü
+    key <AD12> { [Escape], [Escape], [Escape] }; // +
 
     // Middle row
     // --------------------------------------------------------------
-    key <AC01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, backslash] }; // a
-    key <AC02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, slash] }; // s
-    key <AC03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, braceleft] }; // d
-    key <AC04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, braceright] }; // f
-    key <AC05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asterisk] }; // g
-
-    key <AC06> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, question] }; // h
-    key <AC07> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, parenleft] }; // j
-    key <AC08> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, parenright] }; // k
-    key <AC09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, minus] }; // l
-    key <AC10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, colon] }; // ö
-
-    key <AC11> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, at] }; // ä
+    key <AC01> { 
+        symbols = [], [backslash], [],
+        actions[Group3] = [RedirectKey(keycode=<HOME>)]
+    }; // a
+    key <AC02> { 
+        symbols = [], [slash], [],
+        actions[Group3] = [RedirectKey(keycode=<LEFT>)]
+    }; // s
+    key <AC03> { 
+        symbols = [], [braceleft], [],
+        actions[Group3] = [RedirectKey(keycode=<DOWN>)]
+    }; // d
+    key <AC04> {
+        symbols = [], [braceright], [],
+        actions[Group3] = [RedirectKey(keycode=<RGHT>)]
+    }; // f
+    key <AC05> { 
+        symbols = [], [asterisk], [],
+        actions[Group3] = [RedirectKey(keycode=<END>)]
+    }; // g
+    key <AC06> { 
+        symbols = [], [question], [],
+        actions[Group3] = [RedirectKey(keycode=<LEFT>)]
+    }; // h
+    key <AC07> { 
+        symbols = [], [parenleft], [],
+        actions[Group3] = [RedirectKey(keycode=<DOWN>)]
+    }; // j
+    key <AC08> { 
+        symbols = [], [parenright], [],
+        actions[Group3] = [RedirectKey(keycode=<UP>)]
+    }; // k
+    key <AC09> { 
+        symbols = [], [minus], [],
+        actions[Group3] = [RedirectKey(keycode=<RGHT>)]
+    }; // l
+    key <AC10> { [], [colon], [VoidSymbol] }; // ö
+    key <AC11> { [], [at], [VoidSymbol] }; // ä
 
     // Bottom row
     // --------------------------------------------------------------
-    key <AB01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, numbersign] }; // y
-    key <AB02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, dollar] }; // x
-    key <AB03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bar] }; // c
-    key <AB04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asciitilde] }; // v
-    key <AB05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, grave] }; // b
+    key <AB01> {
+        symbols = [], [numbersign], [Esc]
+    }; // y
+    key <AB02> {
+        symbols = [], [dollar], [],
+        actions[Group3] = [RedirectKey(keycode=<TAB>)]
+    }; // x
+    key <AB03> { [], [bar], [VoidSymbol] }; // c
+    key <AB04> {
+        symbols = [], [asciitilde], [],
+        actions[Group3] = [RedirectKey(keycode=<RTRN>)]
+    }; // v
+    key <AB05> {
+        symbols = [], [grave], [Undo]
+        // actions[Group3] = [RedirectKey(keycode=<RGHT>)]
+    }; // b
+    key <AB06> { [], [plus], [VoidSymbol] }; // n
+    key <AB07> { [], [percent], [mu] }; // m
+    key <AB08> { [], [quotedbl], [EuroSign] }; // ,
+    key <AB09> { [], [apostrophe], [VoidSymbol] }; // .
+    key <AB10> { [], [semicolon], [VoidSymbol] }; // -
 
-    key <AB06> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, plus] }; // n
-    key <AB07> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, percent] }; // m
-    key <AB08> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, quotedbl] }; // ,
-    key <AB09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, apostrophe] }; // .
-    key <AB10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, semicolon] }; // -
+    key <SPCE> { [], [space], [space] }; // space
 
-    include "neolight(neolight_modifiers)"
-
-    // japanese stuff
-    key <LSGT> { [Zenkaku_Hankaku] };
-    key <MENU> { [Muhenkan] };
+    // japanese toggle
+    key.type[Group1] = "ONE_LEVEL";
+    key <TLDE> { [Zenkaku_Hankaku], [Zenkaku_Hankaku], [Zenkaku_Hankaku] };
 };
 
-hidden partial modifier_keys
-xkb_symbols "neolight_modifiers" {
-    // # key
-    key <AC12> {
-        type[Group1]="ONE_LEVEL",
-        [ISO_Level5_Shift]
-    };
-    modifier_map Mod3 { <AC12> };
 
+hidden partial modifier_keys
+xkb_symbols "modifiers" {
+    key.type[Group1] = "ONE_LEVEL";
+    key.type[Group2] = "ONE_LEVEL";
+    key.type[Group3] = "ONE_LEVEL";
+
+    // capslock key
     // alt+caps activates capslock
     key <CAPS> {
         type[Group1] = "PC_ALT_LEVEL2",
-        [ISO_Level5_Shift, Caps_Lock]
+        symbols = [VoidSymbol, Caps_Lock], [VoidSymbol], [VoidSymbol],
+        actions = [SetGroup(group=2), LockMods(modifiers=Lock)], [NoAction()], [NoAction()]
     };
-    modifier_map Mod3 { <CAPS> };
+
+    // # key
+    key <AC12> {
+        symbols = [VoidSymbol], [VoidSymbol], [VoidSymbol],
+        actions = [SetGroup(group=2)], [NoAction()], [NoAction()]
+    };
+
+    // <> key
+    key <LSGT> {
+        symbols = [VoidSymbol], [VoidSymbol], [VoidSymbol],
+        actions = [SetGroup(group=3)], [NoAction()], [NoAction()]
+    };
+
+    key <MENU> {
+        symbols = [VoidSymbol], [VoidSymbol], [VoidSymbol],
+        actions = [SetGroup(group=3)], [NoAction()], [NoAction()]
+    };
+
+    key <ALGR> {
+        // "ctrl" does not have any effect, apart from making chromium behave properly
+        symbols = [ctrl], [ctrl], [ctrl],
+        actions = [SetGroup(group=3)], [NoAction()], [NoAction()]
+    };
+
+    key <RWIN> { [ Super_L ]};
 };
