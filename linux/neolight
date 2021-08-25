@@ -1,98 +1,286 @@
+// http://www.x.org/archive/X11R6.8.2/doc/XKB-Enhancing4.html
+// https://www.charvolant.org/doug/xkb/html/index.htm
+// https://wiki.archlinux.org/index.php/X_KeyBoard_extension
+// http://grahamwideman.wikispaces.com/linux+--+keyboard+configuration,+xkb
+// on actions: https://www.x.org/releases/X11R7.6/doc/kbproto/xkbproto.html#key_actions
+
+
+// full layout with de as base
+default hidden partial alphanumeric_keys
+xkb_symbols "de" {
+    include "de"
+    include "neolight(layers)"
+    name[Group1] = "German (Neolight)";
+};
+
+// full layout with de as base
 hidden partial alphanumeric_keys
-xkb_symbols "basic" {
-    // http://www.x.org/archive/X11R6.8.2/doc/XKB-Enhancing4.html
-    // http://www.charvolant.org/~doug/xkb/html/node5.html
-    // https://wiki.archlinux.org/index.php/X_KeyBoard_extension
-    // http://grahamwideman.wikispaces.com/linux+--+keyboard+configuration,+xkb
+xkb_symbols "de_escape_keys" {
+    include "de"
+    include "neolight(layers)"
+    include "neolight(escape_keys)"
+    name[Group1] = "German (Neolight, additional escape keys)";
+};
 
+// the additonal layers
+hidden partial alphanumeric_keys
+xkb_symbols "layers" {
     // preserves AltGr and Shift+AltGr levels
+    include "neolight(modifiers)"
 
+    // virtual modifiers:
+    // [None, Shift, LevelThree, LevelThree + Shift, LevelFive, LevelFive + Shift, LevelThree + LevelFive, LevelThree + LevelFive + Shift]
     key.type[Group1] = "EIGHT_LEVEL";
 
     // Number row
     // --------------------------------------------------------------
-    key <AE01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, onesuperior] }; // 1
-    key <AE02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, twosuperior] }; // 2
-    key <AE03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, threesuperior] }; // 3
-    key <AE04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U203A] }; // 4
-    key <AE05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U2039] }; // 5
-    key <AE06> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, cent] }; // 6
+    key <AE01> {  // 1
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, onesuperior, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AE02> {  // 2
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, twosuperior, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AE03> {  // 3
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, threesuperior, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AE04> {  // 4
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U203A, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AE05> {  // 5
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U2039, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AE06> {  // 6
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, cent, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
 
-    key <AE07> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, yen] }; // 7
-    key <AE08> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, singlelowquotemark] }; // 8
-    key <AE09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, leftsinglequotemark] }; // 9
-    key <AE10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, rightsinglequotemark] }; // 0
+    key <AE07> {  // 7
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, yen, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AE08> {  // 8
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, singlelowquotemark, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AE09> {  // 9
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, leftsinglequotemark, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AE10> {  // 0
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, rightsinglequotemark, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
 
-    key <AE11> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol] }; // ß
-    key <AE12> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, dead_abovering] }; // ´
+    key <AE11> {  // ß
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AE12> {  // ´
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, dead_abovering, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
 
     // Top row
     // --------------------------------------------------------------
-    key <AD01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, Escape] }; // q
-    key <AD02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, underscore] }; // w
-    key <AD03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bracketleft] }; // e
-    key <AD04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bracketright] }; // r
-    key <AD05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asciicircum] }; // t
+    key <AD01> {  // q
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, ellipsis, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<PGUP>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<PGUP>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AD02> {  // w
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, underscore, bracketleft, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<BKSP>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<BKSP>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AD03> {  // e
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bracketleft, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<UP>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<UP>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AD04> {  // r
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bracketright, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<DELE>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<DELE>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AD05> {  // t
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asciicircum, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<PGDN>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<PGDN>, clearmods=LevelThree+LevelFive)]
+    };
 
-    key <AD06> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, exclam] }; // z
-    key <AD07> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, less] }; // u
-    key <AD08> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, greater] }; // i
-    key <AD09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, equal] }; // o
-    key <AD10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, ampersand] }; // p
+    key <AD06> {  // z
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, exclam, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AD07> {  // u
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, less, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AD08> {  // i
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, greater, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AD09> {  // o
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, equal, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AD10> {  // p
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, ampersand, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
 
-    key <AD11> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U017F] }; // ü
-    key <AD12> { [Escape, NoSymbol, NoSymbol, NoSymbol, Escape] }; // +
+    key <AD11> {  // ü
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U017F, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AD12> {  // +
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
 
     // Middle row
     // --------------------------------------------------------------
-    key <AC01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, backslash] }; // a
-    key <AC02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, slash] }; // s
-    key <AC03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, braceleft] }; // d
-    key <AC04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, braceright] }; // f
-    key <AC05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asterisk] }; // g
+    key <AC01> {  // a
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, backslash, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<HOME>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<HOME>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AC02> {  // s
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, slash, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<LEFT>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<LEFT>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AC03> {  // d
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, braceleft, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<DOWN>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<DOWN>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AC04> {  // f
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, braceright, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<RGHT>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<RGHT>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AC05> {  // g
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asterisk, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<END>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<END>, clearmods=LevelThree+LevelFive)]
+    };
 
-    key <AC06> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, question] }; // h
-    key <AC07> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, parenleft] }; // j
-    key <AC08> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, parenright] }; // k
-    key <AC09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, minus] }; // l
-    key <AC10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, colon] }; // ö
+    key <AC06> {  // h
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, question, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<LEFT>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<LEFT>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AC07> {  // j
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, parenleft, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<DOWN>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<DOWN>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AC08> {  // k
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, parenright, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<UP>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<UP>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AC09> {  // l
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, minus, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<RGHT>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<RGHT>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AC10> {  // ö
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, colon, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
 
-    key <AC11> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, at] }; // ä
+    key <AC11> {  // ä
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, at, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
 
     // Bottom row
     // --------------------------------------------------------------
-    key <AB01> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, numbersign] }; // y
-    key <AB02> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, dollar] }; // x
-    key <AB03> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bar] }; // c
-    key <AB04> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asciitilde] }; // v
-    key <AB05> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, grave] }; // b
+    key <AB01> {  // y
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, numbersign, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<ESC>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<ESC>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AB02> {  // x
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, dollar, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<TAB>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<TAB>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AB03> {  // c
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bar, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AB04> {  // v
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asciitilde, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<RTRN>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<RTRN>, clearmods=LevelThree+LevelFive)]
+    };
+    key <AB05> {  // b
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, grave, NoSymbol, Undo, Undo],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
 
-    key <AB06> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, plus] }; // n
-    key <AB07> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, percent] }; // m
-    key <AB08> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, quotedbl] }; // ,
-    key <AB09> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, apostrophe] }; // .
-    key <AB10> { [NoSymbol, NoSymbol, NoSymbol, NoSymbol, semicolon] }; // -
-
-    include "neolight(neolight_modifiers)"
-
-    // japanese stuff
-    key <LSGT> { [Zenkaku_Hankaku] };
-    key <MENU> { [Muhenkan] };
+    key <AB06> {  // n
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, plus, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AB07> {  // m
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, percent, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AB08> {  // ,
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, quotedbl, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AB09> {  // .
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, apostrophe, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
+    key <AB10> {  // -
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, semicolon, NoSymbol, NoSymbol],
+        actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
+    };
 };
 
 hidden partial modifier_keys
-xkb_symbols "neolight_modifiers" {
-    // # key
-    key <AC12> {
-        type[Group1]="ONE_LEVEL",
-        [ISO_Level5_Shift]
-    };
-    modifier_map Mod3 { <AC12> };
-
-    // alt+caps activates capslock
+xkb_symbols "modifiers" {
+    // modifier keys for layer 3
+    // alt+caps still activates capslock
     key <CAPS> {
         type[Group1] = "PC_ALT_LEVEL2",
-        [ISO_Level5_Shift, Caps_Lock]
+        symbols[Group1] = [ISO_Level5_Shift, Caps_Lock]
     };
-    modifier_map Mod3 { <CAPS> };
+    key <AC12> { // # key
+        type[Group1] = "ONE_LEVEL",
+        symbols[Group1] = [ISO_Level5_Shift]
+    };
+
+    // modifier keys for layer 4
+    key <LSGT> { // < key
+        type[Group1] = "ONE_LEVEL",
+        symbols[Group1] = [VoidSymbol],
+        actions[Group1] = [SetMods(modifiers=LevelThree+LevelFive)]
+    };
+    key <MENU> {
+        type[Group1] = "ONE_LEVEL",
+        symbols[Group1] = [VoidSymbol],
+        actions[Group1] = [SetMods(modifiers=LevelThree+LevelFive)]
+    };
+
+    // This might help with making the LevelFive and LevelThree modifiers work better in some cases
+    // (but I'm a bit skeptical).
+    // This thread has lots of dicussion about this, which I don't fully understand however:
+    // https://bugs.freedesktop.org/show_bug.cgi?id=50935
+    include "level5(modifier_mapping)"
+    include "level3(modifier_mapping)"
+};
+
+// additional escape keys for vim users
+hidden partial alphanumeric_keys
+xkb_symbols "escape_keys" {
+    key.type[Group1] = "EIGHT_LEVEL";
+    key <AD01> {  // q
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, Escape, NoSymbol]
+    };
+    key <AD12> {  // +
+        symbols[Group1] = [Escape, NoSymbol, NoSymbol, NoSymbol, Escape, NoSymbol]
+    };
+};
+
+// can be used together with e.g. Mozc to toggle the japanese IME
+hidden partial alphanumeric_keys
+xkb_symbols "jp" {
+    key <TLDE> { // ^
+        symbols[Group1] = [Zenkaku_Hankaku]
+    };
 };
