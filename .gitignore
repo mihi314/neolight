@@ -1,3 +1,6 @@
 build/
 .vscode/
 neolight.ahk
+linux/archlinux/pkg/
+linux/archlinux/src/
+linux/archlinux/*.pkg.tar.*

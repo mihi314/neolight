@@ -11,9 +11,9 @@ install='neolight.install'
 source=('neolight'
         'register-neolight.hook'
         'register-neolight.sh')
-md5sums=('8d9c302128cd2cb4a723150bf5cd7dab'
+md5sums=('09b5bee2b3e4ce98a94206b0547a2293'
          'ea5d2bf7d983a2629fc02de193557f0b'
-         '70021fcdb823d3db01aae2df3ce86429')
+         '433d01c216b121d6917ea8df08391035')
 
 package() {
     install -Dm 644 "${srcdir}/neolight" "${pkgdir}/usr/share/X11/xkb/symbols/neolight"
