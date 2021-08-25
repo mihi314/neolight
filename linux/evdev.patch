@@ -1,9 +1,0 @@
---- evdev_orig	2015-09-16 16:20:04.988132012 +0200
-+++ evdev	2015-09-16 16:21:42.752975111 +0200
-@@ -1115,3 +1115,6 @@
-   numpad:mac			=	+numpad(mac)
-   numpad:microsoft		=	+numpad(microsoft)
-   numpad:shift3       		=	+numpad(shift3)
-+
-+! option   = symbols
-+  neolight = +neolight(basic)

@@ -1,0 +1,1 @@
+../register-neolight.sh

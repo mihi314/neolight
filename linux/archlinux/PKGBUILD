@@ -1,0 +1,22 @@
+# Maintainer: Michael Engelhard <engelhard.michael+git@gmail.com>
+pkgname=neolight
+pkgver=1.0.0
+pkgrel=1
+pkgdesc='Additional layers for the german qwertz keyboard layout and others.'
+arch=('any')
+url='https://github.com/mihi314/neolight'
+license=('GPL')
+depends=('xkeyboard-config')
+install='neolight.install'
+source=('neolight'
+        'register-neolight.hook'
+        'register-neolight.sh')
+md5sums=('8d9c302128cd2cb4a723150bf5cd7dab'
+         'ea5d2bf7d983a2629fc02de193557f0b'
+         '70021fcdb823d3db01aae2df3ce86429')
+
+package() {
+    install -Dm 644 "${srcdir}/neolight" "${pkgdir}/usr/share/X11/xkb/symbols/neolight"
+    install -Dm 755 "${srcdir}/register-neolight.sh" "${pkgdir}/usr/share/libalpm/scripts/register-neolight.sh"
+    install -Dm 644 "${srcdir}/register-neolight.hook" "${pkgdir}/usr/share/libalpm/hooks/register-neolight.hook"
+}
