@@ -32,6 +32,6 @@ for _, mapping in mappings.iterrows():
 
 PLACEHOLDER = "; >>> mappings go here <<<"
 
-with open("build/neolight.ahk", "w", encoding='utf-8') as f_out:
-    with open("windows/template.ahk", "r", encoding='utf-8') as f_in:
+with open("neolight.ahk", "w", encoding='utf-8') as f_out:
+    with open("template.ahk", "r", encoding='utf-8') as f_in:
         f_out.write(f_in.read().replace(PLACEHOLDER, result))
