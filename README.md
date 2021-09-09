@@ -32,7 +32,7 @@ They are located at:
 
 ## Installation and Usage
 ### Linux
-On Arch Linux Neolight is available as an [AUR package here](AUR).
+On Arch Linux Neolight is available as an [AUR package here][AUR].
 
 On other Linux distributions you can install it by running `./linux/install.sh` as superuser. (And `./linux/install.sh --uninstall` for removing it again.)
 
