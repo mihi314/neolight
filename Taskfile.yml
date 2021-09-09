@@ -1,0 +1,31 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  LAYOUT_SVG: all_layers.svg
+
+tasks:
+  images:
+    description: Builds all layer images as svg and png
+    dir: images
+    cmds:
+      - task: single-layer-svg
+        vars: { LAYER: 3 }
+      - task: single-layer-svg
+        vars: { LAYER: 4 }
+      - task: svg2png
+        vars: { LAYER: 3 }
+      - task: svg2png
+        vars: { LAYER: 4 }
+
+  single-layer-svg:
+    dir: images
+    cmds:
+      # In all_layers.svg all layers are by default hidden. This will set one of them to display again.
+      - echo -e '/inkscape:label="Ebene {{.LAYER}}"\n.+1\ns/none/inline/g\nw layer{{.LAYER}}.svg' | ed all_layers.svg
+
+  svg2png:
+    dir: images
+    cmds:
+      - inkscape --export-filename="layer{{.LAYER}}.png" --export-height=200 "layer{{.LAYER}}.svg"
