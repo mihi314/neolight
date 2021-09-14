@@ -64,7 +64,7 @@ The [dconf-editor] utility helps with that.
 
 ### Windows
 The Windows version uses [Autohotkey]. You can either install Autohotkey and run `neolight.ahk`, or run the compiled `neolight.exe` directly.
-Both can be found on the release page.
+Both can be found on the release page (coming soon).
 Then just add it to autostart.
 
 Similar to the linux xkb option version above, this just adds the layers on top of any existing layout, no matter which.
