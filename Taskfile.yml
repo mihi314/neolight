@@ -28,7 +28,7 @@ tasks:
   svg2png:
     dir: images
     cmds:
-      - inkscape --export-filename="layer{{.LAYER}}.png" --export-height=200 "layer{{.LAYER}}.svg"
+      - inkscape --export-filename="layer{{.LAYER}}.png" --export-height=400 "layer{{.LAYER}}.svg"
 
   build:
     dir: windows
