@@ -16,10 +16,10 @@ All other keys stay the same. In fact, Neolight is not necessarily tied to the g
 
 ## The Layout
 ### Layer 3
-<img src="images/layer3.svg?raw=true" height="200px">
+<img src="images/layer3.png?raw=true" height="200px">
 
 ### Layer 4
-<img src="images/layer4.svg?raw=true" height="200px">
+<img src="images/layer4.png?raw=true" height="200px">
 
 
 ### Variant with additional escape keys
@@ -64,7 +64,7 @@ The [dconf-editor] utility helps with that.
 
 ### Windows
 The Windows version uses [Autohotkey]. You can either install Autohotkey and run `neolight.ahk`, or run the compiled `neolight.exe` directly.
-Both can be found on the release page (coming soon).
+Both can be found on the release page.
 Then just add it to autostart.
 
 Similar to the linux xkb option version above, this just adds the layers on top of any existing layout, no matter which.
