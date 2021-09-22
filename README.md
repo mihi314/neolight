@@ -59,7 +59,10 @@ In Gnome this is done by adding it to the `dconf` key at `/org/gnome/desktop/inp
 Add it to the list as `'neolight'` or `'neolight:escape_keys'`.
 The [dconf-editor] utility helps with that.
 
+Note: These options only work for the first layout, should you have multiple. There are [ways around this][groups-issue], but I have not added them yet.
+
 [dconf-editor]: https://man.archlinux.org/man/dconf-editor.1
+[groups-issue]: https://github.com/xkbcommon/libxkbcommon/issues/97#issuecomment-500115821
 
 
 ### Windows
