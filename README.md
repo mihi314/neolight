@@ -16,10 +16,10 @@ All other keys stay the same. In fact, Neolight is not necessarily tied to the g
 
 ## The Layout
 ### Layer 3
-<img src="images/layer3.png?raw=true" height="200px">
+<img src="images/layer3.png?raw=true" width="600px">
 
 ### Layer 4
-<img src="images/layer4.png?raw=true" height="200px">
+<img src="images/layer4.png?raw=true" width="600px">
 
 
 ### Variant with additional escape keys
