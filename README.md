@@ -2,10 +2,10 @@
 The standard german keyboard layout sucks for programming.
 For example `[` is `AltGr+8`, which requires contorting your hand in unspeakable ways.
 There is also this beautiful layout called [Neo], which has, among other things, a whole layer with every special character a programmer's heart desires—arranged in an easy to reach fashion.
-But Neo rearranges all the other keys too.
-Which is good for ergonomics, but also has the downside of messed up shortcuts in various applications and needing to learn a whole new layout.
+However, Neo rearranges all the other keys too.
+Which is good for ergonomics, but has the downside of messed up shortcuts in various applications and needing to learn a whole new layout.
 
-Neolight tries to solve both problems by adding a third (and forth) layer, while keeping the standard qwertz layout intact as far as possible.
+Neolight tries to make the best of both worlds by adding a third (and forth) layer, while keeping the standard qwertz layout intact as far as possible.
 * The third layer is activated by `Capslock` and `#` and contains special characters needed for programming.
 * The fourth layer is activated by `<` and `Menu` and contains navigation keys.
 
