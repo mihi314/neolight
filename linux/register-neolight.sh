@@ -103,7 +103,10 @@ unregister_evdev() {
 }
 
 register_ibus() {
-	if grep -q neolight "$ibus_file"; then
+	if [[ ! -f "$ibus_file" ]]; then
+		echo "No ibus file found. Skipping."
+		return
+	elif grep -q neolight "$ibus_file"; then
 		echo "Neolight already found in $ibus_file"
 	else
 		echo "Adding neolight to $ibus_file"
@@ -145,6 +148,9 @@ register_ibus() {
 }
 
 unregister_ibus() {
+	[[ ! -f "$ibus_file" ]] \
+		&& return
+
 	ibus_tmp="$(mktemp)"
 	awk \
 		'BEGIN { f=1 }
