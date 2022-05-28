@@ -92,7 +92,7 @@ xkb_symbols "layers" {
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<PGUP>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<PGUP>, clearmods=LevelThree+LevelFive)]
     };
     key <AD02> {  // w
-        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, underscore, bracketleft, NoSymbol, NoSymbol],
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, underscore, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<BKSP>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<BKSP>, clearmods=LevelThree+LevelFive)]
     };
     key <AD03> {  // e
@@ -206,7 +206,7 @@ xkb_symbols "layers" {
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<RTRN>, clearmods=LevelThree+LevelFive), RedirectKey(keycode=<RTRN>, clearmods=LevelThree+LevelFive)]
     };
     key <AB05> {  // b
-        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, grave, NoSymbol, Undo, Undo],
+        symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, grave, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
 
