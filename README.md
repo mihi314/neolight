@@ -32,37 +32,61 @@ They are located at:
 
 ## Installation and Usage
 ### Linux
+
 On Arch Linux Neolight is available as an [AUR package here][AUR].
 
-On other Linux distributions you can install it by running `./linux/install.sh` as superuser. (And `./linux/install.sh --uninstall` for removing it again.)
+On other Linux distributions you can install it by running `./linux/install.sh` as superuser (and `./linux/install.sh --uninstall` for removing it again). Depending on your desktop environment you might need to log out and in again (or restart) for it to be fully available.
 
-Depending on your desktop environment you might need to log out and in again (or restart) for it to be fully available.
-
-For activating it there are two options:
+This will add the following XKB layout and options:
 
 [AUR]: https://aur.archlinux.org/packages/neolight
 
+* **XKB layout (only german)**
 
-#### As separate layout (only german)
-Neolight will show up in the german layout variants as "German (Neolight)".
+    The standalone layout is called `neolight`, which also has a variant called `de_escape_keys`. They can be (temporarily) activated via:
+    ```
+    setxkbmap -layout neolight -variant de
+    setxkbmap -layout neolight -variant de_escape_keys
+    ```
 
-If the new layers do not work properly and you have multiple layouts, make sure to set Neolight as the first one. Some other ways to fix that problem are mentioned in the [Neo FAQ].
+    To check the current XKB config:
+    ```
+    setxkbmap -query
+    ```
 
-[Neo FAQ]: https://neo-layout.org/Probleme/FAQ/#die-vierte-ebene-funktioniert-nicht-wenn-neo-als-zweitlayout-eingestellt-ist
+* **XKB options (compatible with other layouts)**
+
+    The XKB options can be combined with any keyboard layout and add the third and forth layer to them. They are called `neolight` and `neolight:escape_keys` and can be (temporarily) activated via:
+
+    ```
+    setxkbmap -option neolight
+    setxkbmap -option neolight:escape_keys
+    ```
 
 
-#### As xkb option (compatible with other layouts)
+Activating the layout or an option more permanently depends on your system:
 
-Neolight can be added to any keyboard layout using the `neolight` or `neolight:escape_keys` xkb options.
+#### Gnome
+Neolight should show up in the german layout variants as "German (Neolight)".
 
-In Gnome this is done by adding it to the `dconf` key at `/org/gnome/desktop/input-sources/xkb-options`.
-Add it to the list as `'neolight'` or `'neolight:escape_keys'`.
+If the new layers do not work properly and you have multiple layouts, make sure to set Neolight as the first one. Some other ways to fix that particular problem are mentioned in the [Neo FAQ].
+
+To set one of the options, add them to the `dconf` key at `/org/gnome/desktop/input-sources/xkb-options` as `['neolight', ... other options]` or `['neolight:escape_keys', ... other options]`.
 The [dconf-editor] utility helps with that.
 
 Note: These options only work for the first layout, should you have multiple. There are [ways around this][groups-issue], but I have not added them yet.
 
+[Neo FAQ]: https://neo-layout.org/Probleme/FAQ/#die-vierte-ebene-funktioniert-nicht-wenn-neo-als-zweitlayout-eingestellt-ist
 [dconf-editor]: https://man.archlinux.org/man/dconf-editor.1
 [groups-issue]: https://github.com/xkbcommon/libxkbcommon/issues/97#issuecomment-500115821
+
+#### IBus
+Neolight should show up in the IBus Preferences (`ibus-setup`) as "German (Neolight)".
+
+I haven't found a way to set individual XKB options there. A workaround would be setting "Use system keyboard layout" and configuring the XKB layout/options in a different way.
+
+#### Others
+If Neolight is missing from your layout selector, let me know and I'll try to add support for it.
 
 
 ### Windows
@@ -70,12 +94,12 @@ The Windows version uses [Autohotkey]. You can either install Autohotkey and run
 Both can be found on the release page.
 Then just add it to autostart.
 
-Similar to the linux xkb option version above, this just adds the layers on top of any existing layout, no matter which.
+Similar to the linux XKB option version above, this just adds the layers on top of any existing layout, no matter which.
 
 [Autohotkey]: https://www.autohotkey.com/
 
 ## How to Learn
-For typing practice have a look at e.g. [typing.io], which lets you type open source code instead of just regular text.
+If you want some typing practice, have a look at [typing.io], which lets you type open source code instead of just regular text.
 
 [typing.io]: http://typing.io/lessons
 
