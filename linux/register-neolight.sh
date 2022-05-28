@@ -68,8 +68,8 @@ register_evdev() {
 	else
 		echo "Adding neolight to $evdev"
 		evdev_tmp="$(mktemp)"
-                cat "$evdev" > "$evdev_tmp" || true
-                cat <<-EOF >> "$evdev_tmp"
+		cat "$evdev" > "$evdev_tmp" || true
+		cat <<-EOF >> "$evdev_tmp"
 		// BEGIN neolight
 		! option   = symbols
 		  neolight = +neolight(layers)

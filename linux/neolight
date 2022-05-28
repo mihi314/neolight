@@ -22,7 +22,7 @@ xkb_symbols "de_escape_keys" {
     name[Group1] = "German (Neolight, additional escape keys)";
 };
 
-// the additonal layers
+// the additional layers
 hidden partial alphanumeric_keys
 xkb_symbols "layers" {
     // preserves AltGr and Shift+AltGr levels
@@ -259,7 +259,7 @@ xkb_symbols "modifiers" {
 
     // This might help with making the LevelFive and LevelThree modifiers work better in some cases
     // (but I'm a bit skeptical).
-    // This thread has lots of dicussion about this, which I don't fully understand however:
+    // This thread has lots of discussion about this, which I don't fully understand however:
     // https://bugs.freedesktop.org/show_bug.cgi?id=50935
     include "level5(modifier_mapping)"
     include "level3(modifier_mapping)"
