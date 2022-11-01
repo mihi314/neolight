@@ -256,13 +256,6 @@ xkb_symbols "modifiers" {
         symbols[Group1] = [VoidSymbol],
         actions[Group1] = [SetMods(modifiers=LevelThree+LevelFive)]
     };
-
-    // This might help with making the LevelFive and LevelThree modifiers work better in some cases
-    // (but I'm a bit skeptical).
-    // This thread has lots of discussion about this, which I don't fully understand however:
-    // https://bugs.freedesktop.org/show_bug.cgi?id=50935
-    include "level5(modifier_mapping)"
-    include "level3(modifier_mapping)"
 };
 
 // additional escape keys for vim users
