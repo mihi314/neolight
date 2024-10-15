@@ -6,6 +6,7 @@ set -euo pipefail
 evdev_rules=/usr/share/X11/xkb/rules
 evdev_xml=$evdev_rules/evdev.xml
 evdev=$evdev_rules/evdev
+types_file=/usr/share/X11/xkb/types/complete
 ibus_file=/usr/share/ibus/component/simple.xml
 
 set_permissions_and_move() {
@@ -18,11 +19,13 @@ set_permissions_and_move() {
 
 register() {
 	register_evdev
+	register_types
 	register_ibus
 }
 
 unregister() {
 	unregister_evdev
+	unregister_types
 	unregister_ibus
 }
 
@@ -85,21 +88,44 @@ register_evdev() {
 unregister_evdev() {
 	evdev_xml_tmp="$(mktemp)"
 	awk \
-		'BEGIN { f=1 }
-		/BEGIN neolight/ { f=0 }
-		/END neolight/ { f=1; next }
-		f' \
+		'BEGIN { printing=1 }
+		/BEGIN neolight/ { printing=0 }
+		/END neolight/ { printing=1; next }
+		printing' \
 		"$evdev_xml" > "$evdev_xml_tmp" \
 	&& set_permissions_and_move "$evdev_xml_tmp" "$evdev_xml"
 
 	evdev_tmp="$(mktemp)"
 	awk \
-		'BEGIN { f=1 }
-		/BEGIN neolight/ { f=0 }
-		/END neolight/ { f=1; next }
-		f' \
+		'BEGIN { printing=1 }
+		/BEGIN neolight/ { printing=0 }
+		/END neolight/ { printing=1; next }
+		printing' \
 		"$evdev" > "$evdev_tmp" \
 	&& set_permissions_and_move "$evdev_tmp" "$evdev"
+}
+
+register_types() {
+	if grep -q neolight "$types_file"; then
+		echo "Neolight already found in $types_file"
+	else
+		echo "Adding neolight to $types_file"
+		value='    include "neolight"'
+
+		types_file_tmp="$(mktemp)"
+		awk -v value="$value" \
+			'/};/ { print value }
+			{ print }' \
+			"$types_file" > "$types_file_tmp" \
+		&& set_permissions_and_move "$types_file_tmp" "$types_file"
+	fi
+}
+
+unregister_types() {
+	types_file_tmp="$(mktemp)"
+	awk '!/neolight/' \
+		"$types_file" > "$types_file_tmp" \
+	&& set_permissions_and_move "$types_file_tmp" "$types_file"
 }
 
 register_ibus() {
@@ -153,10 +179,10 @@ unregister_ibus() {
 
 	ibus_tmp="$(mktemp)"
 	awk \
-		'BEGIN { f=1 }
-		/BEGIN neolight/ { f=0 }
-		/END neolight/ { f=1; next }
-		f' \
+		'BEGIN { printing=1 }
+		/BEGIN neolight/ { printing=0 }
+		/END neolight/ { printing=1; next }
+		printing' \
 		"$ibus_file" > "$ibus_tmp" \
 	&& set_permissions_and_move "$ibus_tmp" "$ibus_file"
 }
