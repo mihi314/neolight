@@ -34,6 +34,7 @@ register_evdev() {
 		echo "Neolight already found in $evdev_xml"
 	else
 		echo "Adding neolight to $evdev_xml"
+
 		read -r -d '' layout <<-EOF || true
 		<!-- BEGIN neolight -->
 		    <layout>
@@ -41,6 +42,9 @@ register_evdev() {
 		        <name>neolight</name>
 		        <shortDescription>de</shortDescription>
 		        <description>German (Neolight)</description>
+		        <countryList>
+		          <iso3166Id>DE</iso3166Id>
+		        </countryList>
 		        <languageList>
 		          <iso639Id>deu</iso639Id>
 		        </languageList>
@@ -49,7 +53,7 @@ register_evdev() {
 		        <variant>
 		          <configItem>
 		            <name>de_escape_keys</name>
-		            <description>German (Neolight, additional escape keys)</description>
+		            <description>German (Neolight + escape keys)</description>
 		          </configItem>
 		        </variant>
 		      </variantList>
@@ -57,10 +61,34 @@ register_evdev() {
 		<!-- END neolight -->
 		EOF
 
+		read -r -d '' options <<-EOF || true
+		<!-- BEGIN neolight -->
+		    <group allowMultipleSelection="false">
+		      <configItem>
+		        <name>neolight</name>
+		        <description>Neolight</description>
+		      </configItem>
+		      <option>
+		        <configItem>
+		          <name>neolight</name>
+		          <description>Add the neolight layers to the first layout</description>
+		        </configItem>
+		      </option>
+		      <option>
+		        <configItem>
+		          <name>neolight:escape_keys</name>
+		          <description>Add the neolight layers and additional escape keys to the first layout</description>
+		        </configItem>
+		      </option>
+		    </group>
+		<!-- END neolight -->
+		EOF
+
 		evdev_xml_tmp="$(mktemp)"
-		awk -v layout="$layout" \
+		awk -v layout="$layout" -v options="$options" \
 			'{ print }
-			/<layoutList>/ { print layout }' \
+			/<layoutList>/ { print layout }
+			/<optionList>/ { print options }' \
 			"$evdev_xml" > "$evdev_xml_tmp" \
 		&& set_permissions_and_move "$evdev_xml_tmp" "$evdev_xml"
 	fi
