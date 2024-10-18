@@ -18,6 +18,9 @@ set_permissions_and_move() {
 }
 
 register() {
+	# Remove any potentially outdated entries first
+	unregister
+
 	register_evdev
 	register_types
 	register_ibus
