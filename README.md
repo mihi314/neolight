@@ -21,6 +21,9 @@ All other keys stay the same. In fact, Neolight is not necessarily tied to the g
 ### Layer 4
 <img src="images/layer4.png?raw=true" width="600px">
 
+### Locking
+The old capslock behavior is still available via `Alt+Capslock`.
+Similar to that, Layer 4 can be locked via `Alt+Mod4`.
 
 ### Variant with additional escape keys
 There is also a variant that has additional escape keys, which are convenient in Vim.

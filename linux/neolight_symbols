@@ -265,14 +265,14 @@ xkb_symbols "modifiers" {
 
     // Modifier keys for layer 4
     key <LSGT> { // < key
-        type[Group1] = "ONE_LEVEL",
-        symbols[Group1] = [VoidSymbol],
-        actions[Group1] = [SetMods(modifiers=LevelFive)]
+        type[Group1] = "PC_ALT_LEVEL2",
+        symbols[Group1] = [VoidSymbol, VoidSymbol],
+        actions[Group1] = [SetMods(modifiers=LevelFive), LockMods(modifiers=LevelFive)]
     };
     key <MENU> {
-        type[Group1] = "ONE_LEVEL",
-        symbols[Group1] = [VoidSymbol],
-        actions[Group1] = [SetMods(modifiers=LevelFive)]
+        type[Group1] = "PC_ALT_LEVEL2",
+        symbols[Group1] = [VoidSymbol, VoidSymbol],
+        actions[Group1] = [SetMods(modifiers=LevelFive), LockMods(modifiers=LevelFive)]
     };
 };
 
