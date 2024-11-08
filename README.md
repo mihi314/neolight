@@ -1,15 +1,15 @@
 # Neolight
-The standard german keyboard layout sucks for programming.
+The standard German keyboard layout sucks for programming.
 For example `[` is `AltGr+8`, which requires contorting your hand in unspeakable ways.
 There is also this beautiful layout called [Neo], which has, among other things, a whole layer with every special character a programmer's heart desires—arranged in an easy to reach fashion.
 However, Neo rearranges all the other keys too.
 Which is good for ergonomics, but has the downside of messed up shortcuts in various applications and needing to learn a whole new layout.
 
-Neolight tries to make the best of both worlds by adding a third (and forth) layer, while keeping the standard qwertz layout intact as far as possible.
+Neolight tries to make the best of both worlds by adding a third (and fourth) layer, while keeping the standard qwertz layout intact as far as possible.
 * The third layer is activated by `Capslock` and `#` and contains special characters needed for programming.
 * The fourth layer is activated by `<` and `Menu` and contains navigation keys.
 
-All other keys stay the same. In fact, Neolight is not necessarily tied to the german layout and you can use it in combination with any other layout, provided your physical keyboard has the right set of keys.
+All other keys stay the same. In fact, Neolight is not necessarily tied to the German layout and you can use it in combination with any other layout, provided your physical keyboard has the right set of keys.
 
 [Neo]: https://www.neo-layout.org/
 
@@ -29,7 +29,7 @@ Similar to that, Layer 4 can be locked via `Alt+Mod4`.
 There is also a variant that has additional escape keys, which are convenient in Vim.
 They are located at:
 * `Mod3+q`
-* `+` on the standard german layout (the key above the right Mod3 in the image above)
+* `+` on the standard German layout (the key above the right Mod3 in the image above)
 * `Mod3++`
 
 
@@ -44,7 +44,7 @@ This will add the following XKB layout and options:
 
 [AUR]: https://aur.archlinux.org/packages/neolight
 
-* **XKB layout (only german)**
+* **XKB layout (only German)**
 
     The standalone layout is called `neolight`, which also has a variant called `de_escape_keys`. They can be (temporarily) activated via:
     ```
@@ -59,7 +59,7 @@ This will add the following XKB layout and options:
 
 * **XKB options (compatible with other layouts)**
 
-    The XKB options can be combined with any keyboard layout and add the third and forth layer to them. They are called `neolight` and `neolight:escape_keys` and can be (temporarily) activated via:
+    The XKB options can be combined with any keyboard layout and add the third and fourth layer to them. They are called `neolight` and `neolight:escape_keys` and can be (temporarily) activated via:
 
     ```
     setxkbmap -option neolight
@@ -70,7 +70,7 @@ This will add the following XKB layout and options:
 Activating the layout or an option more permanently depends on your system:
 
 #### Gnome
-Neolight should show up in the german layout variants as "German (Neolight)".
+Neolight should show up in the German layout variants as "German (Neolight)".
 
 If the new layers do not work properly and you have multiple layouts, make sure to set Neolight as the first one. Some other ways to fix that particular problem are mentioned in the [Neo FAQ].
 
