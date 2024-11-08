@@ -43,7 +43,7 @@ C0  027	 	ö              	:
 DE  028	 	ä              	@
 BF  02B	 	#              	
 
-# forth row
+# fourth row
 E2  056	 	<              	
 59  02C	 	Y              	#
 58  02D	 	X              	$

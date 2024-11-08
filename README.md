@@ -23,7 +23,7 @@ All other keys stay the same. In fact, Neolight is not necessarily tied to the G
 
 ### Locking
 The old capslock behavior is still available via `Alt+Capslock`.
-Similar to that, Layer 4 can be locked via `Alt+Mod4`.
+Similar to that, layer 4 can be locked via `Alt+Mod4`.
 
 ### Variant with additional escape keys
 There is also a variant that has additional escape keys, which are convenient in Vim.
@@ -71,10 +71,12 @@ Activating the layout or an option more permanently depends on your system:
 
 #### Gnome
 Neolight should show up in the German layout variants as "German (Neolight)".
+If not, enable the "Show Extended Input Sources" option in the Gnome Tweaks tool.
 
 If the new layers do not work properly and you have multiple layouts, make sure to set Neolight as the first one. Some other ways to fix that particular problem are mentioned in the [Neo FAQ].
 
-To set one of the options, add them to the `dconf` key at `/org/gnome/desktop/input-sources/xkb-options` as `['neolight', ... other options]` or `['neolight:escape_keys', ... other options]`.
+To set one of the options, use Gnome Tweaks (Keyboard -> Additional Layout Options -> Neolight).
+Alternatively, you can add them by hand to the `dconf` key at `/org/gnome/desktop/input-sources/xkb-options` as `['neolight', ... other options]` or `['neolight:escape_keys', ... other options]`.
 The [dconf-editor] utility helps with that.
 
 Note: These options only work for the first layout, should you have multiple. There are [ways around this][groups-issue], but I have not added them yet.
@@ -93,18 +95,20 @@ If Neolight is missing from your layout selector, let me know and I'll try to ad
 
 
 ### Windows
-The Windows version uses [Autohotkey]. You can either install Autohotkey and run `neolight.ahk`, or run the compiled `neolight.exe` directly.
+The Windows version uses [AutoHotkey]. You can either install AutoHotkey and run `neolight.ahk`, or run the compiled `neolight.exe` directly.
 Both can be found on the release page.
 Then just add it to autostart.
 
 Similar to the linux XKB option version above, this just adds the layers on top of any existing layout, no matter which.
 
-[Autohotkey]: https://www.autohotkey.com/
+[AutoHotkey]: https://www.autohotkey.com/
 
 ## How to Learn
 If you want some typing practice, have a look at [typing.io], which lets you type open source code instead of just regular text.
+Another one is [keybr.com], which also has a source code mode, but also adapts the lessons based on which keys you struggle with.
 
 [typing.io]: http://typing.io/lessons
+[keybr.com]: https://www.keybr.com
 
 ## Alternatives
 Neo has a variant called [NeoQwertz] that tries to do something similar: it has all the features of Neo, but keeps the alphabetic keys from qwertz.
