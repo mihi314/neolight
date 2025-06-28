@@ -45,52 +45,64 @@ xkb_symbols "layers" {
     // Number row
     // --------------------------------------------------------------
     key <AE01> {  // 1
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, onesuperior, onesuperior, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AE02> {  // 2
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, twosuperior, twosuperior, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AE03> {  // 3
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, threesuperior, threesuperior, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AE04> {  // 4
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U203A, U203A, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AE05> {  // 5
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U2039, U2039, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AE06> {  // 6
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, cent, cent, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
 
     key <AE07> {  // 7
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, yen, yen, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AE08> {  // 8
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, singlelowquotemark, singlelowquotemark, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AE09> {  // 9
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, leftsinglequotemark, leftsinglequotemark, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AE10> {  // 0
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, rightsinglequotemark, rightsinglequotemark, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
 
     key <AE11> {  // ß
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AE12> {  // ´
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, dead_abovering, dead_abovering, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
@@ -98,52 +110,64 @@ xkb_symbols "layers" {
     // Top row
     // --------------------------------------------------------------
     key <AD01> {  // q
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, ellipsis, ellipsis, Prior, Prior],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<PGUP>, clearmods=LevelFive), RedirectKey(keycode=<PGUP>, clearmods=LevelFive)]
     };
     key <AD02> {  // w
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, underscore, underscore, BackSpace, BackSpace],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<BKSP>, clearmods=LevelFive), RedirectKey(keycode=<BKSP>, clearmods=LevelFive)]
     };
     key <AD03> {  // e
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bracketleft, bracketleft, Up, Up],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<UP>, clearmods=LevelFive), RedirectKey(keycode=<UP>, clearmods=LevelFive)]
     };
     key <AD04> {  // r
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bracketright, bracketright, Delete, Delete],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<DELE>, clearmods=LevelFive), RedirectKey(keycode=<DELE>, clearmods=LevelFive)]
     };
     key <AD05> {  // t
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asciicircum, asciicircum, Next, Next],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<PGDN>, clearmods=LevelFive), RedirectKey(keycode=<PGDN>, clearmods=LevelFive)]
     };
 
     key <AD06> {  // z
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, exclam, exclam, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AD07> {  // u
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, less, less, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AD08> {  // i
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, greater, greater, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AD09> {  // o
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, equal, equal, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AD10> {  // p
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, ampersand, ampersand, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
 
     key <AD11> {  // ü
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, U017F, U017F, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AD12> {  // +
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
@@ -151,48 +175,59 @@ xkb_symbols "layers" {
     // Middle row
     // --------------------------------------------------------------
     key <AC01> {  // a
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, backslash, backslash, Home, Home],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<HOME>, clearmods=LevelFive), RedirectKey(keycode=<HOME>, clearmods=LevelFive)]
     };
     key <AC02> {  // s
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, slash, slash, Left, Left],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<LEFT>, clearmods=LevelFive), RedirectKey(keycode=<LEFT>, clearmods=LevelFive)]
     };
     key <AC03> {  // d
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, braceleft, braceleft, Down, Down],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<DOWN>, clearmods=LevelFive), RedirectKey(keycode=<DOWN>, clearmods=LevelFive)]
     };
     key <AC04> {  // f
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, braceright, braceright, Right, Right],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<RGHT>, clearmods=LevelFive), RedirectKey(keycode=<RGHT>, clearmods=LevelFive)]
     };
     key <AC05> {  // g
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asterisk, asterisk, End, End],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<END>, clearmods=LevelFive), RedirectKey(keycode=<END>, clearmods=LevelFive)]
     };
 
     key <AC06> {  // h
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, question, question, Left, Left],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<LEFT>, clearmods=LevelFive), RedirectKey(keycode=<LEFT>, clearmods=LevelFive)]
     };
     key <AC07> {  // j
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, parenleft, parenleft, Down, Down],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<DOWN>, clearmods=LevelFive), RedirectKey(keycode=<DOWN>, clearmods=LevelFive)]
     };
     key <AC08> {  // k
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, parenright, parenright, Up, Up],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<UP>, clearmods=LevelFive), RedirectKey(keycode=<UP>, clearmods=LevelFive)]
     };
     key <AC09> {  // l
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, minus, minus, Right, Right],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<RGHT>, clearmods=LevelFive), RedirectKey(keycode=<RGHT>, clearmods=LevelFive)]
     };
     key <AC10> {  // ö
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, colon, colon, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
 
     key <AC11> {  // ä
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, at, at, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
@@ -200,43 +235,53 @@ xkb_symbols "layers" {
     // Bottom row
     // --------------------------------------------------------------
     key <AB01> {  // y
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, numbersign, numbersign, Escape, Escape],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<ESC>, clearmods=LevelFive), RedirectKey(keycode=<ESC>, clearmods=LevelFive)]
     };
     key <AB02> {  // x
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, dollar, dollar, Tab, ISO_Left_Tab],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<TAB>, clearmods=LevelFive), RedirectKey(keycode=<TAB>, clearmods=LevelFive)]
     };
     key <AB03> {  // c
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, bar, bar, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AB04> {  // v
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, asciitilde, asciitilde, Return, Return],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), RedirectKey(keycode=<RTRN>, clearmods=LevelFive), RedirectKey(keycode=<RTRN>, clearmods=LevelFive)]
     };
     key <AB05> {  // b
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, grave, grave, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
 
     key <AB06> {  // n
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, plus, plus, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AB07> {  // m
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, percent, percent, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AB08> {  // ,
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, quotedbl, quotedbl, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AB09> {  // .
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, apostrophe, apostrophe, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
     key <AB10> {  // -
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, semicolon, semicolon, NoSymbol, NoSymbol],
         actions[Group1] = [NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction(), NoAction()]
     };
@@ -280,9 +325,11 @@ xkb_symbols "modifiers" {
 hidden partial alphanumeric_keys
 xkb_symbols "escape_keys" {
     key <AD01> {  // q
+        repeat = True,
         symbols[Group1] = [NoSymbol, NoSymbol, NoSymbol, NoSymbol, Escape, NoSymbol]
     };
     key <AD12> {  // +
+        repeat = True,
         symbols[Group1] = [Escape, NoSymbol, NoSymbol, NoSymbol, Escape, NoSymbol]
     };
 };
