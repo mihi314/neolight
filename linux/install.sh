@@ -6,13 +6,13 @@ BASEDIR=$(dirname "$0")
 
 case "${1:-}" in
     "")
-        install -m 644 "${BASEDIR}/neolight_symbols" /usr/share/X11/xkb/symbols/neolight
-        install -m 644 "${BASEDIR}/neolight_types" /usr/share/X11/xkb/types/neolight
+        install -m 644 "${BASEDIR}/neolight_symbols" /usr/share/xkeyboard-config-2/symbols/neolight
+        install -m 644 "${BASEDIR}/neolight_types" /usr/share/xkeyboard-config-2/types/neolight
         "${BASEDIR}/register-neolight.sh"
         ;;
     --uninstall)
-        rm /usr/share/X11/xkb/symbols/neolight || true
-        rm /usr/share/X11/xkb/types/neolight || true
+        rm /usr/share/xkeyboard-config-2/symbols/neolight || true
+        rm /usr/share/xkeyboard-config-2/types/neolight || true
         "${BASEDIR}/register-neolight.sh" --unregister
         ;;
     -h|--help|*)

@@ -3,10 +3,10 @@ set -euo pipefail
 
 # Based on https://aur.archlinux.org/packages/us_da-layout/
 
-evdev_rules=/usr/share/X11/xkb/rules
+evdev_rules=/usr/share/xkeyboard-config-2/rules
 evdev_xml=$evdev_rules/evdev.xml
 evdev=$evdev_rules/evdev
-types_file=/usr/share/X11/xkb/types/complete
+types_file=/usr/share/xkeyboard-config-2/types/complete
 ibus_file=/usr/share/ibus/component/simple.xml
 
 set_permissions_and_move() {
